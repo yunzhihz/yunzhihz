@@ -8,7 +8,7 @@ class TableController
 {
     public function index()
     {
-        // 获取教师表中的所有数据
+        // 获取课程表中的所有数据
         $school timetable = Db::name('Table')->select();
 
         // 查看获取的数据
