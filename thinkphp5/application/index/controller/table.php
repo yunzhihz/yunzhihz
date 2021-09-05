@@ -1,6 +1,6 @@
 <?php
 namespace app\index\controller;
-use app\commeon\model\Teacher;       // 数据库操作类
+use think\Db;       // 数据库操作类
 /**
  * 课程管理
  */
@@ -12,6 +12,6 @@ class Table
         $school timetable = Db::name('Table')->select();
 
         // 查看获取的数据
-        var_dump($school timetable);
+        var_dump($school timetable【5】【4】);
     }
 }
