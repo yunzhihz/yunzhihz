@@ -4,7 +4,7 @@ use app\commeon\model\Teacher;       // 数据库操作类
 /**
  * 课程管理
  */
-class TableController
+class Table
 {
     public function index()
     {
