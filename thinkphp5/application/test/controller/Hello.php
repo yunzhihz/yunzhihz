@@ -3,8 +3,8 @@ namespace app\test\controller;
 
 class Hello
 {
-	public function luck()
+	public function index()
 	{
-		return 'luck here!';
+		return 'hello yunzhi';
 	}
 }
