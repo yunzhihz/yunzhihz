@@ -5,7 +5,7 @@ class Index
 {
     public function index()
     {
-    	$hello = 'Hello World';
-        return $hello;
+    	$hello = 'Hello World!';
+        return '$hello';
     }
 }
