@@ -6,6 +6,8 @@ class Teacher
 {
 	public function index()
 	{
-		return 'hello Teacher';
+		$teachers = Db::name('teacher')->select();
+
+		var_dump($teachers);
 	}
 }
