@@ -1,11 +1,13 @@
 <?php
 namespace app\index\controller;
 
+use think\Db;
+
 class Index
 {
     public function index()
     {
-    	$hello = 'Hello World!';
-        return '$hello';
+    	var_dump(Db::name('teacher')->find());
+   
     }
 }
