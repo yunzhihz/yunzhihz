@@ -8,6 +8,6 @@ class Teacher
 	{
 		$teachers = Db::name('teacher')->select();
 
-		var_dump($teachers);
+		var_dump($teachers[0]);
 	}
 }
