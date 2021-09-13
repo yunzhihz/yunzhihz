@@ -8,6 +8,11 @@ class TeacherController
 	{
 		$Teacher = new Teacher;
 		$teachers = $Teacher->select();
-		var_dump($Teacher);
+
+		$teacher = $teachers[0];
+		var_dump($teacher->getDate('name'));
+
+		echo $teacher->getData('name');
+		return $teacher->getData('name');
 	}
 }
