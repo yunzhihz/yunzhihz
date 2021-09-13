@@ -7,12 +7,12 @@ class TeacherController
 	public function index()
 	{
 		$Teacher = new Teacher;
-		$teachers = $Teacher->select();
+		$SuoYouJiaoShi = $JiaoShiBiao->select();
 
-		$teacher = $teachers[0];
-		var_dump($teacher->getDate('name'));
+		$JiaoShiZhanSan = $SuoYouJiaoShi[0];
 
-		echo $teacher->getData('name');
-		return $teacher->getData('name');
+
+		echo  '教师姓名' .$JiaoShiZhanSan->getData('name') .'<br />'  ;
+		return  '重复一遍：教师姓名' .  $JiaoShiZhanSan->getData('name');
 	}
 }
