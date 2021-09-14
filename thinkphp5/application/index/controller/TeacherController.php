@@ -8,12 +8,13 @@ class TeacherController extends controller
 	public function index()
 	{
 		$Teacher = new Teacher;
-
 		$teachers = $Teacher->select();
 
-		$this = $this->fetch();
-
-		
+		//向V层传数据 
+		$this ->assign('teachers',$teachers); 
+        //取回打包后的数据
+		$htmls = $this->fetch();
+		//将数据返回给用户 
 		return  $htmls;
 	}
 }
