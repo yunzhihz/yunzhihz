@@ -1,8 +1,9 @@
 <?php
 namespace app\index\controller;
+use think\controller;
 use app\common\model\Teacher;
 
-class TeacherController
+class TeacherController extends controller
 {
 	public function index()
 	{
@@ -10,12 +11,9 @@ class TeacherController
 
 		$teachers = $Teacher->select();
 
-		$teacher = $teachers[0];
+		$this = $this->fetch();
 
-		var_dump($teacher->getDate('name'));
-
-
-		echo  $teacher->getData('name') ;
-		return  $teacher->getData('name');
+		
+		return  $htmls;
 	}
 }
