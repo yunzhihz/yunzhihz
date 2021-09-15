@@ -17,4 +17,8 @@ class TeacherController extends controller
 		//将数据返回给用户 
 		return  $htmls;
 	}
+	public function insert()
+	{
+		return 'hello insert';
+	}
 }
