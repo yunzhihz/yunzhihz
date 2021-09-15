@@ -19,15 +19,17 @@ class TeacherController extends controller
 	}
 	public function insert()
 	{
-		$teacher = array();
+		//实例化Teacher空对象
+		$Teacher = new Teacher();
+
+		//为对象的属性赋值
 		$teacher['name'] = '王五'；
 		$teacher['username'] = 'wangwu';
 		$teacher['sex'] = '1';
 		$teacher['email'] = 'wangwu@yunzhi.club';
-		var_dump($teacher);
-
-		//引用teacher数据表对应的模型
-		$Teacher = new Teacher();
+		
+		//执行对象的插入数据操作
+		var_dump(expression)
 		
 		// 向teacher表中插入数据并判断是否插入成功
 		$Teacher->data($teacher)->save();
