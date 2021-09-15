@@ -19,6 +19,11 @@ class TeacherController extends controller
 	}
 	public function insert()
 	{
-		return 'hello insert';
+		$teacher = array();
+		$teacher['name'] = '王五'；
+		$teacher['username'] = 'wangwu';
+		$teacher['sex'] = '1';
+		$teacher['email'] = 'wangwu@yunzhi.club';
+		var_dump($teacher);
 	}
 }
