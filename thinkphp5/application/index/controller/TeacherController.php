@@ -20,6 +20,8 @@ class TeacherController extends controller
 	public function insert()
 	{
 		var_dump($_POST);
+		$postData = Request::instance()->post();
+		var_dump($postData);
 		return ;  
 
 		//实例化Teacher空对象
