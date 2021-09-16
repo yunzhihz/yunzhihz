@@ -32,4 +32,9 @@ class TeacherController extends controller
 		$Teacher->save();
 		return $teacher->name.'成功增加至数据表中。新增ID为：'. $Teacher->id；
 	}
+	public function add()
+	{
+		$htmls = $this->fetch();
+		return $htmls;
+	}
 }
