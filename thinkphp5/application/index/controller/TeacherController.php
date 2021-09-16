@@ -19,6 +19,9 @@ class TeacherController extends controller
 	}
 	public function insert()
 	{
+		var_dump($_POST);
+		return ;  
+
 		//实例化Teacher空对象
 		$Teacher = new Teacher();
 
@@ -30,7 +33,7 @@ class TeacherController extends controller
 		
 		//执行对象的插入数据操作
 		$Teacher->save();
-		return $teacher->name.'成功增加至数据表中。新增ID为：'. $Teacher->id；
+		return '新增成功。新增ID为：'. $Teacher->id；
 	}
 	public function add()
 	{
