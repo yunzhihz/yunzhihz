@@ -629,6 +629,28 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             }
         }
 
+        //未传入数据，则依新增与更新分别进行验证
+
+    } 
+    else
+     {
+        //更新，只验证有变化的值
+        if ($this->isUpdate && !empty($this->change)) {
+            foreach ($this->change as $value) {
+                $data[$value] = $this->getdate($value);
+            }
+
+            //新增，验证全部的值
+        } else {
+            $data = $this->getdate();
+        }
+
+        //数据自动验证
+        if (!$this->validateData($data,$this->isUpdate)) {
+            return false;
+        }
+
+
         // 检测字段
         if (!empty($this->field)) {
             $this->db();
