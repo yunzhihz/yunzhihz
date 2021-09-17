@@ -28,15 +28,14 @@ class TeacherController extends controller
 		$Teacher = new Teacher(); 
 
 		//为对象的属性赋值
-		$teacher->name = '王五'；
-		$teacher->username = 'wangwu';
-		$teacher->sex = '1';
-		$teacher->email = 'wangwu@yunzhi.club';
+		$Teacher->name = '王五'；
+		$Teacher->username = 'wangwu';
+		$Teacher->sex = '1';
+		$Teacher->email = 'wangwu@yunzhi.club';
 		
 		//执行对象的插入数据操作
-		$Teacher->save();
-
-		return  '新增成功。新增ID为：'. $Teacher->id；
+		var_dump($Teacher->save());
+		return  '成功增加至数据表中。新增ID为：'. $Teacher->id；
 	}
 	public function add()
 	{
