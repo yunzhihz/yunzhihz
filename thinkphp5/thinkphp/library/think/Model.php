@@ -931,6 +931,13 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
                     $validate->scene($scene);
                 }
             }
+
+            //进行数据更新操作则只验证有变化的字段
+            if ($isUpdate) {
+                $validate->reMakeRule($data);
+            }
+
+
             if (!$validate->check($data)) {
                 $this->error = $validate->getError();
                 if ($this->failException) {
