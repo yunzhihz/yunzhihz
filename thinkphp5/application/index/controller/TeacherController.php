@@ -45,6 +45,11 @@ class TeacherController extends controller
 	public function delete()
 	{
 		//获取要删除的对象
+		$Teacher = Teacher::get(16);
+
 		//删除对象
+		$Teacher->delete();
+
+		return '删除成功'；
 	}
 }
