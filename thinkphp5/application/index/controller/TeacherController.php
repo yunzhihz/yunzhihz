@@ -48,17 +48,14 @@ class TeacherController extends controller
 		$Teacher = Teacher::get(14);
 
 		//要删除的对象存在
-		if ($Teacher->delete())
+		if (！is_null($Teacher)
 		{
-			return '删除成功'；
-		}
-		else
-		{
-			return '删除失败'；
+			if ($Teacher->delete())
+			{
+				return '删除成功'；
+			}
 		}
 
-		//删除对象
-		$Teacher->delete();
 
 		return '删除成功'；
 	}
