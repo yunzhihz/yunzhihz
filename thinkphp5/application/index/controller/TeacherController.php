@@ -42,4 +42,9 @@ class TeacherController extends controller
 		$htmls = $this->fetch();
 		return $htmls;
 	}
+	public function delete()
+	{
+		//获取要删除的对象
+		//删除对象
+	}
 }
