@@ -70,4 +70,8 @@ class TeacherController extends controller
 		return $this->success('删除成功', url('index'));
 
 	}
+	public function edit()
+	{
+		var_dump(Request::instance()->param());
+	}
 }
