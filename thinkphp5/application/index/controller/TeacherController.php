@@ -73,11 +73,19 @@ class TeacherController extends controller
 	public function edit()
 	{
 		//获取传入ID
-		//在Teacher表模型中获取当前记录
-		//将数据传给V层
-		//获取封装好的V层内容
-		//将封装好的V层内容返回给用户
+		$id = Request::instance()->praram('id/d');
 
-		var_dump(Request::instance()->param());
+		//在Teacher表模型中获取当前记录
+		$Teacher = Teacher::get($id);
+
+		//将数据传给V层
+		$this->assign('Teacher', $Teacher);
+
+		//获取封装好的V层内容
+		$htmls = $this->fetch();
+
+		//将封装好的V层内容返回给用户
+		return $htmls;
+
 	}
 }
