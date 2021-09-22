@@ -113,4 +113,20 @@ class TeacherController extends controller
 
 			return $message;
 	}
+	public function update()
+	{
+		//接收数据，获取要更新的关键字信息
+		//$id = Request::instance()->post('id/d');
+
+		//获取当前对象
+		$Teacher->name = Request::instance()->post('name');
+		$Teacher->username = Request::instance()->post('username');
+		$Teacher->sex = Request::instance()->post('sex/d');
+		$Teacher->email = Request::instance()->post('email');
+
+		//更新
+		var_dump($Teacher->validate(true)->save());
+
+		return '更新成功'；
+	}
 }
