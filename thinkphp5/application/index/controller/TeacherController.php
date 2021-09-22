@@ -12,8 +12,10 @@ class TeacherController extends controller
 
 		//向V层传数据 
 		$this ->assign('teachers',$teachers); 
+
         //取回打包后的数据
 		$htmls = $this->fetch();
+		
 		//将数据返回给用户 
 		return  $htmls;
 	}
