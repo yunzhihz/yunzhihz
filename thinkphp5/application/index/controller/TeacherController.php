@@ -92,20 +92,23 @@ class TeacherController extends controller
 	{
 		//接收数据
 		$teacher = Request::instance()->post();
+		$teacher['test'] = 'hello';
 
 		//将数据存入Teacher表
 		$Teacher = new Teacher();
+		$message = '更新成功';
 
 		//依据状态定制提示信息
-
-		if ($Teacher->validate(true)->isUpdate(true)->save($teacher))
+	try{
+			if (false === $Teacher->validate(true)->isUpdate(true)->save($teacher))
 
 			{
-				$message = '更新成功';
+				$message = '更新失败：' . $Teacher->getError();
 			}
-			else
+		}
+		catch (\Exception $e)
 			{
-				$message = '更新失败'；
+				$message = '更新失败:' . $e->getMessage();
 			}
 
 			return $message;
