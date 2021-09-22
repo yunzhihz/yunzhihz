@@ -88,4 +88,8 @@ class TeacherController extends controller
 		return $htmls;
 
 	}
+	public function update()
+	{
+		var_dump(Request::instance()->post());
+	}
 }
