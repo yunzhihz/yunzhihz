@@ -116,7 +116,7 @@ class TeacherController extends controller
 	public function update()
 	{
 		//接收数据，获取要更新的关键字信息
-		//$id = Request::instance()->post('id/d');
+		$id = Request::instance()->post('id/d');
 
 		//获取当前对象
 		$Teacher->name = Request::instance()->post('name');
