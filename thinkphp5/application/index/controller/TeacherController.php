@@ -22,6 +22,7 @@ class TeacherController extends controller
 	public function insert()
 	{
 		var_dump($_POST);
+		//接收传入数据
 		$postData = Request::instance()->post();
 		var_dump($postData);
 		return ;  
@@ -46,32 +47,44 @@ class TeacherController extends controller
 	}
 	public function delete()
 	{
-		//获取pathinfo传入的ID值.
+		
+    try{
+		//获取get数据
+		$Request = Request::instance();
 		$id = Request::instance()->param('id/d');
 
-		if (is_null($id) || 0 === $id) {
-			return $this->error('未获取到ID信息')；
+		//判断是否成功接收
+		if (0 === $id) 
+		{
+			throw new \Exception("未获取到ID信息", 1);
 		}
 
 		//获取要删除的对象
-		$Teacher = Teacher::get(￥id);
+		$Teacher = Teacher::get($id);
 
 		//要删除的对象不存在
 		if (！is_null($Teacher))
 		{
-			return $this->error('不存在id行为'. $id .'的教师，删除失败')；
+			throw new \Exception("不存在id行为'. $id .'的教师，删除失败", 1);
 		}
 
 		//删除对象
 		if (！$Teacher->delete())
 		{
-				return $this->error('删除失败:'. $Teacher->getErrorz())；
+			$message = '删除失败:'. $Teacher->getError()；
 		}
 
 		//进行跳转
-		return $this->success('删除成功', url('index'));
+		return $this->success('删除成功', $Request->header('referer'));
+	   } 
 
-	}
+	    catch (\Exception $e)
+	    {
+		   return $e->getMessage();
+	    }
+
+	    return $this->error($message);
+    }
 	public function edit()
 	{
 		//获取传入ID
