@@ -170,5 +170,14 @@ class TeacherController extends controller
 		
 
 		return $message；
+
+		public function test()
+		{
+			try {
+				return $this->error("系统发生错误")；
+			} catch(\Exception $e);
+			 var_dump($e);
+			 return $e->getMessage();
+		}
 	}
 }
