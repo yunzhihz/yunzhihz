@@ -41,8 +41,11 @@ class TeacherController extends controller
 	}
 	public function add()
 	{
-		$htmls = $this->fetch();
+		try {$htmls = $this->fetch();
 		return $htmls;
+	}catch(\Exception $e) {
+		return '系统错误' . $e->getMessage();
+	}
 	}
 	public function delete()
 	{
