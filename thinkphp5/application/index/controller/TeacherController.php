@@ -80,11 +80,14 @@ class TeacherController extends controller
 
 	    catch (\Exception $e)
 	    {
+	       var_dump($e)
 		   return $e->getMessage();
 	    }
 
 	    return $this->error($message);
     }
+
+
 	public function edit()
 	{
 		//获取传入ID
