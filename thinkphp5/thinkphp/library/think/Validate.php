@@ -44,10 +44,7 @@ class Validate
         'array'       => ':attribute必须是数组',
         'accepted'    => ':attribute必须是yes、on或者1',
         'date'        => ':attribute格式不符合',
-        'file'        => ':attribute不是
-
-
-        有效的上传文件',
+        'file'        => ':attribute不是有效的上传文件',
         'image'       => ':attribute不是有效的图像文件',
         'alpha'       => ':attribute只能是字母',
         'alphaNum'    => ':attribute只能是字母和数字',
