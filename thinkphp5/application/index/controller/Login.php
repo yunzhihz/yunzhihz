@@ -4,7 +4,7 @@ use think\Controller;
 use think\Request;              // 请求
 use app\common\model\Teacher;   // 教师模型
 
-class LoginController extends Controller
+class Login extends Controller
 {
     // 用户登录表单
     public function index()
