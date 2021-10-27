@@ -18,6 +18,7 @@ class Login extends Controller
     public function login()
     {
         // 接收post信息
+        
         $postData = Request::instance()->post();
 
         // 验证用户名是否存在
