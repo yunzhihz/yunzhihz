@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use think\Controller;
 use think\Request;              // 请求
-use app\common\model\Teacher;   // 教师模型
+use app\common\model\Teacher ;   // 教师模型
 
 class Login extends Controller
 {
