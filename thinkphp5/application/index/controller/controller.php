@@ -1,6 +1,6 @@
 namespace app\common\model;
 ...
-class Teacher extends Model
+class Controller extends Model
 {
         /**
      * 用户登录
