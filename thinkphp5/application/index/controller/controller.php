@@ -1,42 +1,13 @@
-namespace app\common\model;
-...
-class Controller extends Controller
-{
-        /**
-     * 用户登录
-     * @param  string $username 用户名
-     * @param  string $password 密码
-     * @return bool   成功返回true，失败返回false。
-     */
-    static public function login($username, $password)
-    {
-        // 验证用户是否存在
-        $map = array('username' => $username);
-        $Teacher = self::get($map);
-        
-        if (!is_null($Teacher)) {
-            // 验证密码是否正确
-            if ($Teacher->checkPassword($password)) {
-                // 登录
-                session('teacherId', $Teacher->getData('id'));
-                return true;
-            }
-        }
-        return false;
-    }
+<?php
+// 该文件位于application\index\controller文件夹中
+namespace app\index\controller;
 
-    /**
-     * 验证密码是否正确
-     * @param  string $password 密码
-     * @return bool           
-     */
-    public function checkPassword($password)
+// 我的文件名叫做Controller.php，我的名字对应的叫做Controller。
+class Controller
+{
+    // 我的方法名叫login
+    public function login()
     {
-        if ($this->getData('password') === $password)
-        {
-            return true;
-        } else {
-            return false;
-        }
+        return '星期一   星期二   星期三   星期四   星期五';
     }
 }
